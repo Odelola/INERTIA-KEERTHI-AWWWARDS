@@ -1,0 +1,299 @@
+/* CREATED BY ODELOLA, DESIGN BY KEERTHI */
+/* GENERAL UTILITIES STARTS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: padding-box;
+    font-family: var(--universalFont);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+a,
+p {
+    color: var(--textColor);
+}
+
+html,
+body {
+    background: var(--backgroundColor);
+    font-size: 62.5%;
+    scrollbar-width: ;
+}
+
+:root {
+    --backgroundColor: #607262;
+    --textColor: #F1F3F1;
+    --universalFont: Durer, serif;
+    --site-max-width: 1300px;
+}
+
+@font-face {
+    font-family: Durer;
+    src: url('../fonts/Durer.otf')
+}
+
+/* GENERAL UTILITIES ENDS */
+/* GENERAL STYLES STARTS */
+#loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--backgroundColor);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+
+#loader .loader-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: .9rem;
+     column-gap: 9rem;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: 92px;
+}
+
+#loader .loader-inner .loader-image{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    overflow: hidden;
+}
+#loader .loader-inner .loader-image #INERTIA_CREDIT{
+    height: 100%;
+}
+
+#loader .loader-inner .loader-vertical-line{
+    width: 0.8rem;
+    height: 0%;
+    background: var(--textColor);
+}
+
+#loader .loader-inner #KEERTHI_CREDIT{
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    font-size: 8rem;
+    transform: translateX(-15.5rem);
+    -webkit-transform: translateX(-15.5rem);
+    -moz-transform: translateX(-15.5rem);
+    -ms-transform: translateX(-15.5rem);
+    -o-transform: translateX(-15.5rem);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav {
+    padding: 2.5rem 1rem;
+}
+
+nav .nav-inner {
+    margin: 0 auto;
+    width: var(--site-max-width);
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .nav-inner a {
+    font-size: 3rem;
+    position: relative;
+}
+
+nav .nav-inner a::before {
+    content: "";
+    width: 0%;
+    height: .2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--textColor);
+    transition: width cubic-bezier(0.445, 0.05, 0.55, 0.95) .35s;
+    -webkit-transition: width cubic-bezier(0.445, 0.05, 0.55, 0.95) .35s;
+    -moz-transition: width cubic-bezier(0.445, 0.05, 0.55, 0.95) .35s;
+    -ms-transition: width cubic-bezier(0.445, 0.05, 0.55, 0.95) .35s;
+    -o-transition: width cubic-bezier(0.445, 0.05, 0.55, 0.95) .35s;
+}
+
+nav .nav-inner a:hover::before,
+nav .nav-inner a:focus::before{
+    width: 100%;
+}
+
+.hero {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+.hero .hero-inner .hero-absolute-text h1{
+    position: absolute;
+    font-size: 16rem;
+    z-index: 10;
+}
+
+.hero .hero-inner .hero-absolute-text h1 .char{
+    display: inline-block;
+}
+
+.hero .hero-inner .hero-absolute-text h1:first-child{
+    left: 11%;
+    top: 18%;
+}
+
+.hero .hero-inner .hero-absolute-text h1:last-child{
+    left: 47%;
+    top: 60%;
+}
+
+.hero .hero-inner .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: .4rem;
+}
+
+.hero .hero-inner .hero-section h2 {
+    font-size: 4.5rem;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.hero .hero-inner .hero-section p {
+    font-size: 2.4rem;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.hero .hero-inner .hero-section .hero-section_img{
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+/* .hero .hero-inner .hero-section .hero-section_img .color-difference-cursor {
+    width: 3rem;
+    height: 3rem;
+    background: #000;
+    position: fixed;
+    top: 50%;
+    z-index:30;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+} */
+.hero .hero-inner .hero-section .hero-section_img .hero_image {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-height: 55rem;
+}
+
+/* GENERAL STYLES ENDS */
+/* MEDIA QUERIES STARTS */
+@media (min-width: 200px) and (max-width: 1200px){
+    html,
+    body {
+        font-size: 50%
+    }
+    nav .nav-inner {
+        width: 100%;
+        /* padding: 2.5rem 1rem; */
+    }
+    #loader .loader-inner{
+        -moz-column-gap: .5rem;
+        column-gap: .5rem;
+        width: 100%;
+        height: 10vh;
+    }
+    #loader .loader-inner .loader-image{
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        transform: translateX(-5vw);
+        -webkit-transform: translateX(-5vw);
+        -moz-transform: translateX(-5vw);
+        -ms-transform: translateX(-5vw);
+        -o-transform: translateX(-5vw);
+}
+    #loader .loader-inner .loader-image #INERTIA_CREDIT{
+        width: 35vw;
+    }
+    #loader .loader-inner .loader-vertical-line{
+        margin-right: 3vw;
+    }
+    #loader .loader-inner #KEERTHI_CREDIT{
+        transform: translateX(5vw);
+        -webkit-transform: translateX(5vw);
+        -moz-transform: translateX(5vw);
+        -ms-transform: translateX(5vw);
+        -o-transform: translateX(5vw);
+}
+    header {
+        height: auto;
+    }
+    .hero{
+        margin: 3rem 0;
+    }
+    .hero .hero-inner{
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    .hero .hero-inner .hero-absolute-text h1{
+        position: static;
+        font-size: 10rem;
+        text-align: center;
+    }
+}
+@media (min-width: 200px) and (max-width: 799px){
+    #loader .loader-inner #KEERTHI_CREDIT{
+        font-size: 5rem;
+    }
+}
+@media (min-width: 800px) and (max-width: 1100px){
+    html,
+    body {
+        font-size: 58%
+    }
+    #loader .loader-inner .loader-vertical-line{
+        margin-right: 5vw;
+    }
+    #loader .loader-inner #KEERTHI_CREDIT{
+        font-size: 6.5rem;
+    }
+    @media (min-width: 1101px) and (max-width: 1350px){
+        nav .nav-inner {
+            width: 100%;
+        }
+        #loader .loader-inner .loader-vertical-line{
+            margin-right: 6.5vw;
+        }
+        #loader .loader-inner #KEERTHI_CREDIT{
+            font-size: 7rem;
+        }
+}
+/* MEDIA QUERIES ENDS */}
